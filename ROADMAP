@@ -1,0 +1,11 @@
+Roadmap: New features to be implemented
+
+- Change all interface texts and inside comments to english
+- Write a small tutorial
+- Write an about section, inside the program interface
+- Make inferences on the ontology
+- Make new blocks from a set of existing blocks
+- Implement feature that makes possible to obtain an visual diagram model from the ontology
+- Load other base ontologies (not only the automation ontology)
+- Wiki where people could share differents base ontologies
+
