@@ -1,0 +1,9 @@
+package br.ufrn.lii.owlblockdiagram.controller;
+
+/**
+ *
+ * @author Jéssica Oliveira
+ */
+public class SceneController {
+    
+}

@@ -1,0 +1,38 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package br.ufrn.lii.owlblockdiagram.io;
+
+import br.ufrn.lii.owlblockdiagram.DTO.IndividualDTO;
+import java.awt.Color;
+import java.awt.Point;
+import java.io.Serializable;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Jessica
+ */
+public interface NodeIO extends Serializable {
+
+    public String getLabel();
+
+    public void setLabel(String label);
+
+    public Color getColor();
+
+    public void setColor(Color color);
+
+    public Point getPoint();
+
+    public void setPoint(Point point);
+
+    public ArrayList<String> getChildrenList();
+
+    public void setChildrenList(ArrayList<String> children);
+
+    public void setIndividual(IndividualDTO individualDTO);
+
+    public IndividualDTO getIndividual();
+}

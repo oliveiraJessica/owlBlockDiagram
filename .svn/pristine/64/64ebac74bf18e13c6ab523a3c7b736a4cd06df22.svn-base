@@ -1,0 +1,1426 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns="http://www.semanticweb.org/ontologies/automacao.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://www.semanticweb.org/ontologies/automacao.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Rectifier">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Equipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Sensor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Instrument"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="ReactionKiln">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Kiln"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Pass">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Pipe"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Regenerator">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Equipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Tank">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Equipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Pump">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Equipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Camara">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Acessory"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Separator">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Equipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Acessory">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Component"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="BatchReactor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reator em batelada, em ingl&amp;#234;s batch reactor, de aplica&amp;#231;&amp;#227;o bastante geral 
+      na ind&amp;#250;stria qu&amp;#237;mica mas limitada para processos industriais pesados, 
+      pois n&amp;#227;o permite produ&amp;#231;&amp;#227;o cont&amp;#237;nua.</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Reactor"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="HeatingKiln">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Kiln"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AlarmH">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="AlarmType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="HelixImpeller">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="CloseClearanceImpeller"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SignalLine">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Pipe"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Output"/>
+  <owl:Class rdf:ID="DiferentialPressureController">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ControllerType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SensorType">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ComponentType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Instrument">
+    <rdfs:subClassOf rdf:resource="#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Cyclone">
+    <rdfs:subClassOf rdf:resource="#Separator"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FlowControleValve">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ControllValve"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Fluid"/>
+  <owl:Class rdf:ID="ReboilerRefervedor">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Refervedor</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Exchanger"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AlarmLL">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AlarmType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="TemperatureController">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ControllerType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Evaporator">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p style="margin-top: 0"&gt;
+      Evaporador
+    &lt;/p&gt;</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Equipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PressureSensor">
+    <rdfs:subClassOf rdf:resource="#SensorType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ExternalEvent">
+    <rdfs:subClassOf rdf:resource="#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Turbine">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Equipment"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Junction">
+    <rdfs:subClassOf rdf:resource="#Acessory"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Equipment">
+    <rdfs:subClassOf rdf:resource="#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="IndustrialProcess"/>
+  <owl:Class rdf:ID="TurbineImpeller">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ImpellerType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AlarmR">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AlarmType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AbsorverTower">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Tower"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Cooler">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Exchanger"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Converser">
+    <rdfs:subClassOf rdf:resource="#Instrument"/>
+  </owl:Class>
+  <owl:Class rdf:ID="HighEfficiencyTurbineImpeller">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="AxialImpeller"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Relay">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Deflector">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Chicana</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#Exchanger">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Permutador</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="PressureControleValve">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ControllValve"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="FlowType"/>
+  <owl:Class rdf:about="#Tower">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Exaustor">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LevelControleValve">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ControllValve"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="EndothermicReaction">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p style="margin-top: 0"&gt;
+      Uma rea&amp;#231;&amp;#227;o endot&amp;#233;rmica &amp;#233; uma rea&amp;#231;&amp;#227;o qu&amp;#237;mica cuja energia total 
+      (entalpia) dos seus produtos &amp;#233; maior que a de seus reagentes, ou seja, 
+      ela absorve energia (na forma de calor). Um exemplo seria a decomposi&amp;#231;&amp;#227;o 
+      da bauxita, para obten&amp;#231;&amp;#227;o de alum&amp;#237;nio, processo que exige grande 
+      quantidade de energia. Para estudantes e leigos nesta &amp;#225;rea, processos 
+      endot&amp;#233;rmicos s&amp;#227;o aqueles que, para sofrerem ou n&amp;#227;o algum tipo de rea&amp;#231;&amp;#227;o 
+      ou transforma&amp;#231;&amp;#227;o necessitam ganhar energia...
+    &lt;/p&gt;
+    &lt;p style="margin-top: 0"&gt;
+      Quando h&amp;#225; separa&amp;#231;&amp;#227;o de um composto, energia deve ser fornecida a ele, 
+      sendo portanto uma rea&amp;#231;&amp;#227;o endot&amp;#233;rmica.
+    &lt;/p&gt;</rdfs:comment>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="ChemicalReactionType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AirCooler">
+    <rdfs:subClassOf rdf:resource="#Exchanger"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AnchorImpeller">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#CloseClearanceImpeller"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Pipe">
+    <rdfs:subClassOf rdf:resource="#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Material"/>
+  <owl:Class rdf:ID="PowerSource">
+    <rdfs:subClassOf rdf:resource="#ExternalEvent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Registrator">
+    <rdfs:subClassOf rdf:resource="#Instrument"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RadialImpeller">
+    <rdfs:subClassOf rdf:resource="#TurbineImpeller"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Kiln">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SpecialComponent">
+    <rdfs:subClassOf rdf:resource="#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RawMaterial"/>
+  <owl:Class rdf:ID="DistillationColumn">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StraightBladeTurbineImpeller">
+    <rdfs:subClassOf rdf:resource="#RadialImpeller"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Fire">
+    <rdfs:subClassOf rdf:resource="#ExternalEvent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Sprinkler">
+    <rdfs:subClassOf rdf:resource="#Acessory"/>
+  </owl:Class>
+  <owl:Class rdf:about="#AxialImpeller">
+    <rdfs:subClassOf rdf:resource="#TurbineImpeller"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Duct">
+    <rdfs:subClassOf rdf:resource="#Pipe"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LevelSensor">
+    <rdfs:subClassOf rdf:resource="#SensorType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Decanter">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="RegeneratingTower">
+    <rdfs:subClassOf rdf:resource="#Tower"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Rain">
+    <rdfs:subClassOf rdf:resource="#ExternalEvent"/>
+  </owl:Class>
+  <owl:Class rdf:ID="JacketedVessel">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Vessel"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="EquipmentType">
+    <rdfs:subClassOf rdf:resource="#ComponentType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Alarm">
+    <rdfs:subClassOf rdf:resource="#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FlowSensor">
+    <rdfs:subClassOf rdf:resource="#SensorType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TrapPurgador">
+    <rdfs:subClassOf rdf:resource="#Separator"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Purgador</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Torch">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Maçarico</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StaticPressureController">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ControllerType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Extension">
+    <rdfs:subClassOf rdf:resource="#Acessory"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Burner">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Queimador</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="DiskTurbineImpeller">
+    <rdfs:subClassOf rdf:resource="#RadialImpeller"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Controller">
+    <rdfs:subClassOf rdf:resource="#Instrument"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AlarmL">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AlarmType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Actuator">
+    <rdfs:subClassOf rdf:resource="#Instrument"/>
+  </owl:Class>
+  <owl:Class rdf:ID="AlarmHH">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#AlarmType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PlugFlowReactor">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Reactor"/>
+    </rdfs:subClassOf>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reator de fluxo em pist&amp;#227;o (PFR, plug flow reactor model), ou 
+      simplesmente reator pist&amp;#227;o (RP).Em um RFP, um ou mais reagentes fluidos 
+      s&amp;#227;o bombeados atrav&amp;#233;s de uma tubula&amp;#231;&amp;#227;o que &amp;#233; o pr&amp;#243;prrio reator. A rea&amp;#231;&amp;#227;o 
+      qu&amp;#237;mica ocorre na medida em que os reagentes viajam atrav&amp;#233;s do RFP. 
+      Neste tipo de reator, a taxa de rea&amp;#231;&amp;#227;o cria um cria um gradiente em 
+      rela&amp;#231;&amp;#227;o &amp;#224; dist&amp;#226;ncia percorrida; na entrada do RFP, a taxa &amp;#233; muito alta, 
+      mas como as concentra&amp;#231;&amp;#245;es dos reagentes diminuem e a concentra&amp;#231;&amp;#227;o do 
+      produto aumenta (ou as concentra&amp;#231;&amp;#245;es dos produtos aumentam) a taxa de 
+      rea&amp;#231;&amp;#227;o diminui.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Heater">
+    <rdfs:subClassOf rdf:resource="#Exchanger"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Aquecedor</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Compresser">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ExothermicReaction">
+    <rdfs:subClassOf rdf:resource="#ChemicalReactionType"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p style="margin-top: 0"&gt;
+      Uma rea&amp;#231;&amp;#227;o exot&amp;#233;rmica &amp;#233; uma rea&amp;#231;&amp;#227;o qu&amp;#237;mica cuja energia &amp;#233; transferida de 
+      um meio interior para o meio exterior, assim aquecendo o ambiente. Um 
+      exemplo disso &amp;#233; a rea&amp;#231;&amp;#227;o de queima de produtos inflam&amp;#225;veis, como &amp;#225;lcool 
+      ou a gasolina, que produzem muita energia n&amp;#227;o contida em seu meio.
+    &lt;/p&gt;
+    &lt;p style="margin-top: 0"&gt;
+      Rea&amp;#231;&amp;#227;o exot&amp;#233;rmica: rea&amp;#231;&amp;#227;o qu&amp;#237;mica que liberta calor, sendo, portanto, a 
+      energia final dos produtos menor que a energia inicial dos reagentes. 
+      Disso se conclui que a varia&amp;#231;&amp;#227;o de energia &amp;#233; negativa.
+    &lt;/p&gt;</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="ExhaustFan">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Motor</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Vessel">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Switch">
+    <rdfs:subClassOf rdf:resource="#SensorType"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ControllerType">
+    <rdfs:subClassOf rdf:resource="#ComponentType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SegmentalDeflector">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DeflectorType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Serpentine">
+    <rdfs:subClassOf rdf:resource="#Pipe"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ControllValve">
+    <rdfs:subClassOf rdf:resource="#Actuator"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Input"/>
+  <owl:Class rdf:about="#Reactor">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Filter">
+    <rdfs:subClassOf rdf:resource="#Separator"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Transmissor">
+    <rdfs:subClassOf rdf:resource="#Instrument"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SootBlower">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Soprador de Fuligem</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:ID="Beater">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p style="margin-top: 0"&gt;
+      Misturador
+    &lt;/p&gt;</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#DeflectorType">
+    <rdfs:subClassOf rdf:resource="#EquipmentType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="LevelController">
+    <rdfs:subClassOf rdf:resource="#ControllerType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="ContinuosStirredTankReactor">
+    <rdfs:subClassOf rdf:resource="#Reactor"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reator perfeitamente agitado (RPA) ou reator tanque agitado cont&amp;#237;nuo 
+      (CSTR, de continuous stirred-tank reactor model).Em um RPA, um ou mais 
+      fluidos reagentes s&amp;#227;o introduzidos em um reator tanque com um agitador 
+      enquanto o efluente do reator &amp;#233; removido. O agitador agita os reagentes 
+      para garantir a mistura adequada. Simplesmente dividindo o volume do 
+      tanque pela vaz&amp;#227;o volum&amp;#233;trica m&amp;#233;dia atrav&amp;#233;s do tanque resulta no tempo 
+      de resid&amp;#234;ncia, ou a quantidade m&amp;#233;dia de tempo na qual uma quantidade 
+      discreta de reagente passa dentro do tanque. Reatores RPA/CSTR tamb&amp;#233;m 
+      s&amp;#227;o chamados de reatores de concentra&amp;#231;&amp;#227;o uniforme.</rdfs:comment>
+  </owl:Class>
+  <owl:Class rdf:about="#AlarmType">
+    <rdfs:subClassOf rdf:resource="#ComponentType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Generator">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Indicator">
+    <rdfs:subClassOf rdf:resource="#Instrument"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Condenser">
+    <rdfs:subClassOf rdf:resource="#Exchanger"/>
+  </owl:Class>
+  <owl:Class rdf:ID="OperatorHuman">
+    <rdfs:subClassOf rdf:resource="#Component"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PitchedBladeTurbineImpeller">
+    <rdfs:subClassOf rdf:resource="#AxialImpeller"/>
+  </owl:Class>
+  <owl:Class rdf:about="#CloseClearanceImpeller">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#ImpellerType"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Chimney">
+    <rdfs:subClassOf rdf:resource="#Pipe"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ImpellerType">
+    <rdfs:subClassOf rdf:resource="#EquipmentType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Boiler">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Caldeira</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Exchanger"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Impeller">
+    <rdfs:subClassOf rdf:resource="#Equipment"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Utility"/>
+  <owl:Class rdf:ID="TemperatureSensor">
+    <rdfs:subClassOf rdf:resource="#SensorType"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TemperatureControleValve">
+    <rdfs:subClassOf rdf:resource="#ControllValve"/>
+  </owl:Class>
+  <owl:Class rdf:ID="SemiBatchReactor">
+    <rdfs:subClassOf rdf:resource="#Reactor"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:ID="industrialProcess">
+    <rdfs:range rdf:resource="#IndustrialProcess"/>
+    <rdfs:domain rdf:resource="#Component"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasUpStream">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Component"/>
+          <owl:Class rdf:about="#ControllValve"/>
+          <owl:Class rdf:about="#Equipment"/>
+          <owl:Class rdf:about="#Pipe"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Component"/>
+          <owl:Class rdf:about="#ControllValve"/>
+          <owl:Class rdf:about="#Equipment"/>
+          <owl:Class rdf:about="#Pipe"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p style="margin-top: 0"&gt;
+      Montante
+    &lt;/p&gt;</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isEquipmentOut">
+    <rdfs:domain rdf:resource="#Equipment"/>
+    <rdfs:range rdf:resource="#Component"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasDownStream">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Component"/>
+          <owl:Class rdf:about="#ControllValve"/>
+          <owl:Class rdf:about="#Equipment"/>
+          <owl:Class rdf:about="#Pipe"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Component"/>
+          <owl:Class rdf:about="#ControllValve"/>
+          <owl:Class rdf:about="#Equipment"/>
+          <owl:Class rdf:about="#Pipe"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf rdf:resource="#hasUpStream"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >&lt;p style="margin-top: 0"&gt;
+      Jusante
+    &lt;/p&gt;</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="providesEnergy">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Camara"/>
+          <owl:Class rdf:about="#Equipment"/>
+          <owl:Class rdf:about="#Serpentine"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Camara"/>
+          <owl:Class rdf:about="#Equipment"/>
+          <owl:Class rdf:about="#Serpentine"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isEquipmentEntry">
+    <rdfs:domain rdf:resource="#Equipment"/>
+    <rdfs:range rdf:resource="#Component"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="receiveSignal">
+    <rdfs:range rdf:resource="#Sensor"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="sendSignal"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Controller"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasInput">
+    <rdfs:range rdf:resource="#Input"/>
+    <rdfs:domain rdf:resource="#Component"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isTypeImpeller">
+    <rdfs:range rdf:resource="#ImpellerType"/>
+    <rdfs:domain rdf:resource="#Impeller"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="receiveEnergy">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Camara"/>
+          <owl:Class rdf:about="#Equipment"/>
+          <owl:Class rdf:about="#Serpentine"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Camara"/>
+          <owl:Class rdf:about="#Equipment"/>
+          <owl:Class rdf:about="#Serpentine"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf rdf:resource="#providesEnergy"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#sendSignal">
+    <rdfs:range rdf:resource="#Controller"/>
+    <rdfs:domain rdf:resource="#Sensor"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasMaterial">
+    <rdfs:domain rdf:resource="#Fluid"/>
+    <rdfs:range rdf:resource="#Material"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isComponentInputOutput">
+    <rdfs:range rdf:resource="#Component"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Input"/>
+          <owl:Class rdf:about="#Output"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="hasOutput">
+    <rdfs:domain rdf:resource="#Component"/>
+    <rdfs:range rdf:resource="#Output"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isFlowType">
+    <rdfs:domain rdf:resource="#Input"/>
+    <rdfs:range rdf:resource="#FlowType"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="thermophysicalProperty">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="photo">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#IndustrialProcess"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="conductivity">
+    <rdfs:subPropertyOf rdf:resource="#thermophysicalProperty"/>
+    <rdfs:domain rdf:resource="#Fluid"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="newtonian">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+          >false</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:subPropertyOf>
+      <owl:DatatypeProperty rdf:ID="fluidProperty"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="#Fluid"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="materialProperty"/>
+  <owl:DatatypeProperty rdf:ID="pressure">
+    <rdfs:subPropertyOf rdf:resource="#thermophysicalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="viscosity">
+    <rdfs:comment xml:lang="pt">&lt;p style="margin-top: 0"&gt;
+      Unidade de medida: centipoises
+    &lt;/p&gt;</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain rdf:resource="#Fluid"/>
+    <rdfs:subPropertyOf rdf:resource="#thermophysicalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="resistantCorrosiveMaterial">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+          >false</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Material"/>
+    <rdfs:subPropertyOf rdf:resource="#materialProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="substanceType">
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Inert</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Reagent</rdf:first>
+            </rdf:rest>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Catalyst</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="#fluidProperty"/>
+    <rdfs:domain rdf:resource="#Fluid"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="substanceState">
+    <rdfs:domain rdf:resource="#Fluid"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Liquido</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Solido</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Gasoso</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+    <rdfs:subPropertyOf rdf:resource="#fluidProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="tag">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Alarm"/>
+          <owl:Class rdf:about="#Equipment"/>
+          <owl:Class rdf:about="#Instrument"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:subPropertyOf>
+      <owl:FunctionalProperty rdf:ID="identifier"/>
+    </rdfs:subPropertyOf>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="value">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Alarm"/>
+          <owl:Class rdf:about="#Indicator"/>
+          <owl:Class rdf:about="#Sensor"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="density">
+    <rdfs:domain rdf:resource="#Fluid"/>
+    <rdfs:subPropertyOf rdf:resource="#thermophysicalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="temperature">
+    <rdfs:domain rdf:resource="#Fluid"/>
+    <rdfs:subPropertyOf rdf:resource="#thermophysicalProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="formule">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#Material"/>
+    <rdfs:subPropertyOf rdf:resource="#materialProperty"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:ID="corrosive">
+    <rdfs:subPropertyOf rdf:resource="#materialProperty"/>
+    <rdfs:domain rdf:resource="#Material"/>
+    <rdfs:range>
+      <rdfs:Datatype>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+            >true</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+          >false</rdf:first>
+        </owl:oneOf>
+      </rdfs:Datatype>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="isComponent">
+    <rdfs:range rdf:resource="#Component"/>
+    <rdfs:domain rdf:resource="#Component"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="#identifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Component"/>
+          <owl:Class rdf:about="#EquipmentType"/>
+          <owl:Class rdf:about="#FlowType"/>
+          <owl:Class rdf:about="#Fluid"/>
+          <owl:Class rdf:about="#IndustrialProcess"/>
+          <owl:Class rdf:about="#Material"/>
+          <owl:Class rdf:about="#RawMaterial"/>
+          <owl:Class rdf:about="#Utility"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="order">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Instrument"/>
+          <owl:Class rdf:about="#Serpentine"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isControlador">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Actuator"/>
+    <rdfs:domain rdf:resource="#Controller"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isAlarm">
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Controller"/>
+          <owl:Class rdf:about="#Sensor"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="hasAlarm"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#Alarm"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="description">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Component"/>
+          <owl:Class rdf:about="#EquipmentType"/>
+          <owl:Class rdf:about="#FlowType"/>
+          <owl:Class rdf:about="#IndustrialProcess"/>
+          <owl:Class rdf:about="#Material"/>
+          <owl:Class rdf:about="#RawMaterial"/>
+          <owl:Class rdf:about="#Utility"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="isInstrument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Instrument"/>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Equipment"/>
+          <owl:Class rdf:about="#Pipe"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="label">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Input"/>
+          <owl:Class rdf:about="#Output"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:ID="hasComponents">
+    <rdfs:domain rdf:resource="#Component"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Component"/>
+    <owl:inverseOf rdf:resource="#isComponent"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:ID="hasAssociateOutput">
+    <rdfs:range rdf:resource="#Output"/>
+    <rdfs:domain rdf:resource="#Input"/>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="hasAssociateInput"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#hasAlarm">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Controller"/>
+          <owl:Class rdf:about="#Sensor"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#Alarm"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:ID="hasController">
+    <rdfs:range rdf:resource="#Controller"/>
+    <owl:inverseOf rdf:resource="#isControlador"/>
+    <rdfs:domain rdf:resource="#Actuator"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#hasAssociateInput">
+    <rdfs:range rdf:resource="#Input"/>
+    <rdfs:domain rdf:resource="#Output"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:ID="hasInstruments">
+    <owl:inverseOf rdf:resource="#isInstrument"/>
+    <rdfs:range rdf:resource="#Instrument"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Equipment"/>
+          <owl:Class rdf:about="#Pipe"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+  </owl:InverseFunctionalProperty>
+  <owl:NamedIndividual rdf:ID="energyFlow">
+    <rdf:type rdf:resource="#FlowType"/>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2</identifier>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Energia</description>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="cobre">
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Cobre</description>
+    <formule xml:lang="pt">Cu</formule>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >5</identifier>
+    <rdf:type rdf:resource="#Material"/>
+    <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</resistantCorrosiveMaterial>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="acidoSulfuricoF">
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</newtonian>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</identifier>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ácido Sufúrico</description>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >30.0</viscosity>
+    <temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >20.0</temperature>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</corrosive>
+    <substanceState rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Liquido</substanceState>
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="acidoSulfurico">
+        <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</resistantCorrosiveMaterial>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Ácido Sulfúrico</description>
+        <formule xml:lang="pt">H2SO4</formule>
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >true</corrosive>
+        <rdf:type rdf:resource="#Material"/>
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >14</identifier>
+      </owl:NamedIndividual>
+    </hasMaterial>
+    <rdf:type rdf:resource="#Fluid"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="arF">
+    <temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >0.0</temperature>
+    <substanceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inert</substanceType>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >4</identifier>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</newtonian>
+    <rdf:type rdf:resource="#Fluid"/>
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="oxigenio">
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</corrosive>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Oxigênio</description>
+        <formule xml:lang="pt">O2</formule>
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >8</identifier>
+        <rdf:type rdf:resource="#Material"/>
+        <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</resistantCorrosiveMaterial>
+      </owl:NamedIndividual>
+    </hasMaterial>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >1.74E-4</viscosity>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ar</description>
+    <substanceState rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gasoso</substanceState>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="MaterialFlow">
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</identifier>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Material</description>
+    <rdf:type rdf:resource="#FlowType"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="alcoolEtilicoF">
+    <temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >20.0</temperature>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Álcoo Etílico</description>
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="alcooEtilico">
+        <formule rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >CH3CH2OH</formule>
+        <rdf:type rdf:resource="#Material"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Álcoo Etílico</description>
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >3</identifier>
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</corrosive>
+      </owl:NamedIndividual>
+    </hasMaterial>
+    <substanceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Reagent</substanceType>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >3</identifier>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >0.0248</viscosity>
+    <rdf:type rdf:resource="#Fluid"/>
+    <substanceState rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Liquido</substanceState>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</newtonian>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="xenonio">
+    <formule xml:lang="pt">Xe</formule>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Xenônio</description>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <rdf:type rdf:resource="#Material"/>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >13</identifier>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="vapor">
+    <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</resistantCorrosiveMaterial>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Vapor</description>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >14</identifier>
+    <rdf:type rdf:resource="#Material"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="commandFlow">
+    <rdf:type rdf:resource="#FlowType"/>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >4</identifier>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Comando</description>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="vidroF1">
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="vidro">
+        <rdf:type rdf:resource="#Material"/>
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >11</identifier>
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</corrosive>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Vidro</description>
+        <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</resistantCorrosiveMaterial>
+      </owl:NamedIndividual>
+    </hasMaterial>
+    <temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >20.0</temperature>
+    <rdf:type rdf:resource="#Fluid"/>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</newtonian>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >1.0E38</viscosity>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >11</identifier>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="hidrogenioF">
+    <temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >0.0</temperature>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >8.4E-4</viscosity>
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="hidrogenio">
+        <formule xml:lang="pt">H2</formule>
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</corrosive>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Hidrogênio</description>
+        <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</resistantCorrosiveMaterial>
+        <rdf:type rdf:resource="#Material"/>
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >7</identifier>
+      </owl:NamedIndividual>
+    </hasMaterial>
+    <substanceState rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gasoso</substanceState>
+    <rdf:type rdf:resource="#Fluid"/>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hidrogênio</description>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</newtonian>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >6</identifier>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="plasticoF">
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Plástico</description>
+    <substanceState rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Solido</substanceState>
+    <rdf:type rdf:resource="#Fluid"/>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >8</identifier>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</newtonian>
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="plastico">
+        <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</resistantCorrosiveMaterial>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Plástico</description>
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >10</identifier>
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</corrosive>
+        <rdf:type rdf:resource="#Material"/>
+      </owl:NamedIndividual>
+    </hasMaterial>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >3333.0</viscosity>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="petroleoF">
+    <substanceState rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Liquido</substanceState>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</newtonian>
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="petroleo">
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >9</identifier>
+        <rdf:type rdf:resource="#Material"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Petróleo</description>
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</corrosive>
+      </owl:NamedIndividual>
+    </hasMaterial>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Petróleo</description>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >2222.0</viscosity>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >7</identifier>
+    <rdf:type rdf:resource="#Fluid"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="helixImpeller">
+    <rdf:type rdf:resource="#HelixImpeller"/>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2</identifier>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Hélice</description>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="turbineImpeller">
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Turbina</description>
+    <rdf:type rdf:resource="#TurbineImpeller"/>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >3</identifier>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="gliceroF1">
+    <rdf:type rdf:resource="#Fluid"/>
+    <temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >20.0</temperature>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</newtonian>
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="glicerol">
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</corrosive>
+        <rdf:type rdf:resource="#Material"/>
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >14</identifier>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Glicerol</description>
+        <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</resistantCorrosiveMaterial>
+      </owl:NamedIndividual>
+    </hasMaterial>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >148.5</viscosity>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >12</identifier>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="bronze">
+    <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</resistantCorrosiveMaterial>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >4</identifier>
+    <rdf:type rdf:resource="#Material"/>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Bronze</description>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="segmentalDeflector">
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</identifier>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Defletor segmental</description>
+    <rdf:type rdf:resource="#SegmentalDeflector"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="informationFlow">
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Informação</description>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >3</identifier>
+    <rdf:type rdf:resource="#FlowType"/>
+  </owl:NamedIndividual>
+  <Fluid rdf:ID="aguaF1">
+    <substanceState rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Liquido</substanceState>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Água</description>
+    <substanceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inert</substanceType>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</newtonian>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >0.891</viscosity>
+    <temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >25.0</temperature>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >2</identifier>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="agua">
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >2</identifier>
+        <formule xml:lang="pt">H2O</formule>
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</corrosive>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Água</description>
+        <rdf:type rdf:resource="#Material"/>
+        <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</resistantCorrosiveMaterial>
+      </owl:NamedIndividual>
+    </hasMaterial>
+  </Fluid>
+  <owl:NamedIndividual rdf:ID="queroseneF">
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Querosene</description>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >9</identifier>
+    <rdf:type rdf:resource="#Fluid"/>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</newtonian>
+    <substanceState rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Liquido</substanceState>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >44444.0</viscosity>
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="querosene">
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Querosene</description>
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</corrosive>
+        <rdf:type rdf:resource="#Material"/>
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >12</identifier>
+      </owl:NamedIndividual>
+    </hasMaterial>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="aguaF2">
+    <substanceType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Inert</substanceType>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10</identifier>
+    <temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >20.0</temperature>
+    <hasMaterial rdf:resource="#agua"/>
+    <substanceState rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Liquido</substanceState>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >0.103</viscosity>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</newtonian>
+    <rdf:type rdf:resource="#Fluid"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="gasolinaF">
+    <rdf:type rdf:resource="#Fluid"/>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >1111.0</viscosity>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >5</identifier>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</newtonian>
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="gasolina">
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >6</identifier>
+        <rdf:type rdf:resource="#Material"/>
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</corrosive>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Gasolina</description>
+        <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</resistantCorrosiveMaterial>
+      </owl:NamedIndividual>
+    </hasMaterial>
+    <substanceState rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Liquido</substanceState>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Gasolina</description>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="picheF1">
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</newtonian>
+    <newtonian rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</newtonian>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >13</identifier>
+    <temperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >20.0</temperature>
+    <hasMaterial>
+      <owl:NamedIndividual rdf:ID="piche">
+        <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >14</identifier>
+        <rdf:type rdf:resource="#Material"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Piche</description>
+        <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</resistantCorrosiveMaterial>
+        <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+        >false</corrosive>
+      </owl:NamedIndividual>
+    </hasMaterial>
+    <viscosity rdf:datatype="http://www.w3.org/2001/XMLSchema#float"
+    >1000000.0</viscosity>
+    <rdf:type rdf:resource="#Fluid"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="acoCarbonoInoxidavel">
+    <rdf:type rdf:resource="#Material"/>
+    <corrosive rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >false</corrosive>
+    <resistantCorrosiveMaterial rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</resistantCorrosiveMaterial>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Aço Carbono Inoxidável</description>
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</identifier>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:ID="anchorImpeller">
+    <identifier rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1</identifier>
+    <rdf:type rdf:resource="#AnchorImpeller"/>
+    <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Âncora</description>
+  </owl:NamedIndividual>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.5, Build 663)  http://protege.stanford.edu -->

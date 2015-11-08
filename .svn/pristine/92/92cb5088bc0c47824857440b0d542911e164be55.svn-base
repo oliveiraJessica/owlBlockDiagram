@@ -1,0 +1,74 @@
+/* 
+ * To change this template, choose Tools | Templates 
+ * and open the template in the editor. 
+ */
+package br.ufrn.lii.owlblockdiagram.io;
+
+import br.ufrn.lii.owlblockdiagram.DTO.IndividualDTO;
+import br.ufrn.lii.owlblockdiagram.model.ImageNode;
+import java.awt.Color;
+import java.awt.Point;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author Jessica
+ */
+public class ImageNodeIO implements NodeIO {
+
+    private String label;
+    private Color color;
+    private Point point;
+    private ArrayList<String> children;
+    private IndividualDTO individual;
+
+    public ImageNodeIO(ImageNode imageNode, Point point) {
+        this.label = imageNode.getLabel();
+        this.point = point;
+        this.color = imageNode.getColor();
+        this.children = imageNode.getChildrenList();
+        this.individual = imageNode.getComponentInstance();
+    }
+
+    public String getLabel() {
+        return this.label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public Color getColor() {
+        return this.color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    public Point getPoint() {
+        return this.point;
+    }
+
+    public void setPoint(Point point) {
+        this.point = point;
+    }
+
+    public ArrayList<String> getChildrenList() {
+        return this.children;
+    }
+
+    public void setChildrenList(ArrayList<String> children) {
+        this.children = children;
+    }
+
+    @Override
+    public void setIndividual(IndividualDTO individualDTO) {
+        this.individual = individualDTO;
+    }
+
+    @Override
+    public IndividualDTO getIndividual() {
+        return this.individual;
+    }
+}
