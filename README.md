@@ -12,30 +12,32 @@ How to contribute
 As a free software, there are many ways to contribute, and I encourage you to do so!
 
 GitHub has a nice guide about contributing to open source softwares: https://guides.github.com/activities/contributing-to-open-source/
-First thing: Play around with the code. Download the source code from GitHub and take a closer look into the software.
-Then, you have a couple of options:
 
+First thing: Play around with the code. Download the source code from GitHub and take a closer look into the software.
+
+Then, you have a couple of options:
 You can make suggestions of new features or improvements to the ones already implemented.
-You may also take a look on the Road Path document to see if you find something interest to implement yourself. If you do so, take a look on the 'Pull request' section on the link above.
+You may also take a look on the Road Path document to see if you find something interesting to implement yourself. If you do so, take a look on the 'Pull request' section on the link above.
 You can report bugs. On the GitHub link I pasted above you can see how to create an Issue to report a bug. If you find it difficult or boring, or both, just send me an email (jeh.ajdo@gmail.com) :)
-If you decide to adventure yourself trough the code, take a look at 'To Developers' section. It may help you to ficar ciente of what you may find, and how to explore it.
+
+If you decide to do one of the above, add yourself to the authors section (Contributor: your_name (your_email)), but if you decide to adventure yourself trough the code, take a look at 'To Developers' section. It may help you to be aware of what you may find, and how to explore it.
 
 
 To Developers
 ----------------------------------
 The software was developed based in a MVCish architecture. The packets follow the structure: 
 
-DTO (data to object) - Classes to parse the data contained in the ontology file to java objects
+ - DTO (data to object) - Classes to parse the data contained in the ontology file to java objects
 controller - There is only one controler to load .owl files
-io - Classes to save or open program files
-model - All inside work of the main interface elements
-owlblockdiagram - contains the main class, to start the program
-utils - Contais classes to be used in varius circunstances
-view - All classes that deal with th interface
+ - io - Classes to save or open program files
+ - model - All inside work of the main interface elements
+ - owlblockdiagram - contains the main class, to start the program
+ - utils - Contais classes to be used in varius circunstances
+ - view - All classes that deal with th interface
 
-Also, all the interface was developed using the VisualLibrary. You can find tutorials and documentation on the VisualLibrary in the Netbeans official page: https://platform.netbeans.org/graph/
+Also, all the interface was developed using VisualLibrary. You can find tutorials and documentation on VisualLibrary in the Netbeans official web page: https://platform.netbeans.org/graph/
 
-When you do any modification in the code (see the third point in the "How to contribute" section), add yourself and email to the authors section.
+When you do any modification in the code, add yourself to the authors section (Developer: your_name (your_email)).
 
 Authors
 ----------------------------------
